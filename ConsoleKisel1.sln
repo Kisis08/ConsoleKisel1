@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleKisel1", "ConsoleKisel1.csproj", "{B099A274-87BC-4911-AF4C-E4E4C93D6F60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B099A274-87BC-4911-AF4C-E4E4C93D6F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B099A274-87BC-4911-AF4C-E4E4C93D6F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B099A274-87BC-4911-AF4C-E4E4C93D6F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B099A274-87BC-4911-AF4C-E4E4C93D6F60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8F57F1A-FCFF-44AF-A2BD-5CF4D27E9042}
+	EndGlobalSection
+EndGlobal
