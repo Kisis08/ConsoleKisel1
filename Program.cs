@@ -15,7 +15,7 @@ namespace ConsoleKisel1
 
         public void GetInfo()
         {
-        Console.WriteLine($"Тип: {Type}  Сумма: {Value} Валюта: {Currency} Категория: {Category}");
+        Console.WriteLine($"Транзакция за {DateOperation} \nТип: {Type}  \nСумма: {Value} \nВалюта: {Currency} \nКатегория: {Category}");
         }
     }
 
@@ -28,12 +28,13 @@ namespace ConsoleKisel1
 
 
             Artem.Rcd = 1; 
-            Artem.Type = 0; 
+            Artem.Type = 0;
+       
             Artem. Value = 5220F;
             Artem.Currency = "UAH";
             Artem.Category = "Офф зарплата";
             Artem.Note = "Причемание";
-            Artem.DateCreate = (DateTime.Now);
+            Artem.DateOperation = (DateTime.Now);
           
 
             Artem.GetInfo();
