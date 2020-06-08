@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleKisel1
 {
-    class MoneyUsers  // Пока не используется, всегда один пользователь
+    class Users  // Пока не используется, всегда один пользователь
     {
         long Rcd;
         string Name;

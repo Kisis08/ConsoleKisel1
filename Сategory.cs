@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleKisel1
 {
-    class MoneyСategory
+    class Сategory
     {
         long Rcd;
         string Name;
