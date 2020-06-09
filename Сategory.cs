@@ -4,14 +4,11 @@ using System.Text;
 
 namespace ConsoleKisel1
 {
-    class Сategory
+   
+    public class Сategory
     {
-        long Rcd;
-        string Name;
-        enum Type
-        {
-          input,
-          output
-        }
+        public long Rcd;
+        public string Name;
+        public СategoryType Type;
     }
 }
