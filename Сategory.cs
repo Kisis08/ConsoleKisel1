@@ -8,5 +8,10 @@ namespace ConsoleKisel1
     {
         long Rcd;
         string Name;
+        enum Type
+        {
+          input,
+          output
+        }
     }
 }
