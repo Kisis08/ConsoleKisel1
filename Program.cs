@@ -11,10 +11,10 @@ namespace ConsoleKisel1
             Transaction Artem = new Transaction();
             // Artem.GetInfo();// до присвоения значений 
             Artem.Rcd = 1;
-            Artem.Type = TransactionType.Приход;
+            Artem.Type = TransactionType.inflow;
             Artem. Value = 5220F;
             Artem.Currency = 1;
-            Artem.Category = "Офф зарплата";
+            Artem.Category = 500;
             Artem.Note = "Причемание";
             Artem.DateOperation = (DateTime.Now);
       

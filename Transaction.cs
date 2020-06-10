@@ -9,9 +9,9 @@ namespace ConsoleKisel1
         public long Rcd; //ID-запси
         public TransactionType Type; //Тип записи (0-расход, 1 - приход)
         public float Value; //Сумма транзакции  
-        public byte Currency;  //Валюта, пока только "грн."
-        public object Category; //Категория (Связь с классом MoneyСategory)
-        public object Note; // Примечание   
+        public long Currency;  //Валюта, пока только "грн."
+        public long Category; //Категория (Связь с классом MoneyСategory)
+        public string Note; // Примечание   
         public DateTime DateCreate = (DateTime.Now); //Дата создания записи
         public DateTime DateOperation;  //Дата транзакции
 
