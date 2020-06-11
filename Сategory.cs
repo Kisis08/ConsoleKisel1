@@ -9,6 +9,6 @@ namespace ConsoleKisel1
     {
         public long Rcd;
         public string Name;
-        public СategoryType Type;
+        public FlowType Type;
     }
 }

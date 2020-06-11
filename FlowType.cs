@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleKisel1
 {
-    public enum СategoryType
+    public enum FlowType // Направление транзакции приход или расход
     {
         input,
         output

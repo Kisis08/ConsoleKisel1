@@ -11,7 +11,7 @@ namespace ConsoleKisel1
             Transaction Artem = new Transaction();
             // Artem.GetInfo();// до присвоения значений 
             Artem.Rcd = 1;
-            Artem.Type = TransactionType.inflow;
+            Artem.Type = FlowType.input;
             Artem. Value = 5220F;
             Artem.Currency = 1;
             Artem.Category = 500;
