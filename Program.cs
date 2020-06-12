@@ -11,10 +11,10 @@ namespace ConsoleKisel1
 
             List<Currency> CurrencyInfo = new List<Currency>(3);
 
-            CurrencyInfo.Add(new Currency() { Rcd = 1, abb = "UAH", Name = "Гривня" });
-            CurrencyInfo.Add(new Currency() { Rcd = 2, abb = "USD", Name = "Dollar" });
-            CurrencyInfo.Add(new Currency() { Rcd = 3, abb = "EUR", Name = "Euro" });
-            CurrencyInfo.Add(new Currency() { Rcd = 4, abb = "RUB", Name = "Рубль" });
+            CurrencyInfo.Add(new Currency() { Rcd = 980, abb = "UAH", Name = "Гривня" });
+            CurrencyInfo.Add(new Currency() { Rcd = 840, abb = "USD", Name = "Dollar" });
+            CurrencyInfo.Add(new Currency() { Rcd = 978, abb = "EUR", Name = "Euro" });
+            CurrencyInfo.Add(new Currency() { Rcd = 643, abb = "RUB", Name = "Рубль" });
 
             List<Сategory> СategoryInfo = new List<Сategory>(3);
 
@@ -50,13 +50,32 @@ namespace ConsoleKisel1
                 Artem.Rcd = 1;
                 Artem.Type = FlowType.input;
                 Artem. Value = 5220F;
-                Artem.Currency = 1;
+                Artem.Currency = 978;
                 Artem.Category = 500;
                 Artem.Note = "Причемание";
                 Artem.DateOperation = (DateTime.Now);
 
             //Artem.GetInfo();
-            Console.ReadKey();
+            //Console.ReadKey();
+
+            for (int Vаl = 0; Vаl < CurrencyInfo.Count; Vаl++)
+            {
+               if (CurrencyInfo[Vаl].Rcd == Artem.Currency)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
+                {
+                Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
+                    break;
+                }
+           
+
+            }
+
+            //for (int z = 0; z < 9; z++)
+            //{
+            //    if (z == 5)
+            //        break;
+            //    Console.WriteLine(z);
+            //}
+
 
 
         }
