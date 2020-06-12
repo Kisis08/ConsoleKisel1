@@ -20,9 +20,9 @@ namespace ConsoleKisel1
             СategoryInfo.Add(new Сategory() { Rcd = 1, Name = "Зарплата", Type = FlowType.input});
             СategoryInfo.Add(new Сategory() { Rcd = 2, Name = "Бонусы", Type = FlowType.input });
             СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Еда", Type = FlowType.output });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Бензин", Type = FlowType.output });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Лечение", Type = FlowType.output });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Игрушки", Type = FlowType.output });
+            СategoryInfo.Add(new Сategory() { Rcd = 4, Name = "Бензин", Type = FlowType.output });
+            СategoryInfo.Add(new Сategory() { Rcd = 5, Name = "Лечение", Type = FlowType.output });
+            СategoryInfo.Add(new Сategory() { Rcd = 6, Name = "Игрушки", Type = FlowType.output });
 
 
 
