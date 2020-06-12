@@ -26,12 +26,21 @@ namespace ConsoleKisel1
             СategoryInfo.Add(new Сategory() { Rcd = 6, Name = "Игрушки", Type = FlowType.output });
 
             int i = 0;
-            while (i <4)
+            while (i < 4)
             {
                 Console.WriteLine($"Валюта: {CurrencyInfo[i].Name}  {CurrencyInfo[i].abb}");
                 i++;
             }
 
+            for (int а = 0; а < 4; а++)
+            {
+                Console.WriteLine($"Валюта: {CurrencyInfo[а].Name}  {CurrencyInfo[а].abb}");
+            }
+
+            foreach (Сategory aСategory in СategoryInfo)
+            {
+                Console.WriteLine(aСategory.Name);
+            }
 
 
 
