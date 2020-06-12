@@ -26,20 +26,20 @@ namespace ConsoleKisel1
             СategoryInfo.Add(new Сategory() { Rcd = 6, Name = "Игрушки", Type = FlowType.output });
 
             int i = 0;
-            while (i < 4)
+            while (i < CurrencyInfo.Count)
             {
                 Console.WriteLine($"Валюта: {CurrencyInfo[i].Name}  {CurrencyInfo[i].abb}");
                 i++;
             }
 
-            for (int а = 0; а < 4; а++)
+            for (int а = 0; а < CurrencyInfo.Count; а++)
             {
                 Console.WriteLine($"Валюта: {CurrencyInfo[а].Name}  {CurrencyInfo[а].abb}");
             }
 
             foreach (Сategory aСategory in СategoryInfo)
             {
-                Console.WriteLine(aСategory.Name);
+                Console.WriteLine($"Категория: {aСategory.Name}");
             }
 
 
@@ -54,8 +54,8 @@ namespace ConsoleKisel1
                 Artem.Category = 500;
                 Artem.Note = "Причемание";
                 Artem.DateOperation = (DateTime.Now);
-      
-            Artem.GetInfo();
+
+            //Artem.GetInfo();
             Console.ReadKey();
 
 
