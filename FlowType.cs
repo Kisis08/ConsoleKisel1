@@ -6,7 +6,7 @@ namespace ConsoleKisel1
 {
     public enum FlowType // Направление транзакции приход или расход
     {
-        input,
-        output
+        input = 1,
+        output = 2
     }
 }

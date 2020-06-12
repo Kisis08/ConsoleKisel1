@@ -17,12 +17,12 @@ namespace ConsoleKisel1
 
             List<Сategory> СategoryInfo = new List<Сategory>(3);
 
-            СategoryInfo.Add(new Сategory() { Rcd = 1, Name = "Зарплата", Type = (FlowType)1 });
-            СategoryInfo.Add(new Сategory() { Rcd = 2, Name = "Бонусы", Type = (FlowType)1 });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Еда", Type = (FlowType)2 });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Бензин", Type = (FlowType)2 });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Лечение", Type = (FlowType)2 });
-            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Игрушки", Type = (FlowType)2 });
+            СategoryInfo.Add(new Сategory() { Rcd = 1, Name = "Зарплата", Type = FlowType.input});
+            СategoryInfo.Add(new Сategory() { Rcd = 2, Name = "Бонусы", Type = FlowType.input });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Еда", Type = FlowType.output });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Бензин", Type = FlowType.output });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Лечение", Type = FlowType.output });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Игрушки", Type = FlowType.output });
 
 
 
