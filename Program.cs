@@ -14,6 +14,7 @@ namespace ConsoleKisel1
             CurrencyInfo.Add(new Currency() { Rcd = 1, abb = "UAH", Name = "Гривня" });
             CurrencyInfo.Add(new Currency() { Rcd = 2, abb = "USD", Name = "Dollar" });
             CurrencyInfo.Add(new Currency() { Rcd = 3, abb = "EUR", Name = "Euro" });
+            CurrencyInfo.Add(new Currency() { Rcd = 4, abb = "RUB", Name = "Рубль" });
 
             List<Сategory> СategoryInfo = new List<Сategory>(3);
 
@@ -23,6 +24,14 @@ namespace ConsoleKisel1
             СategoryInfo.Add(new Сategory() { Rcd = 4, Name = "Бензин", Type = FlowType.output });
             СategoryInfo.Add(new Сategory() { Rcd = 5, Name = "Лечение", Type = FlowType.output });
             СategoryInfo.Add(new Сategory() { Rcd = 6, Name = "Игрушки", Type = FlowType.output });
+
+            int i = 0;
+            while (i <4)
+            {
+                Console.WriteLine($"Валюта: {CurrencyInfo[i].Name}  {CurrencyInfo[i].abb}");
+                i++;
+            }
+
 
 
 
