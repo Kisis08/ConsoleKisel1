@@ -9,11 +9,22 @@ namespace ConsoleKisel1
         static void Main(string[] args)
         {
 
-            List<Currency> abb = new List<Currency>(3);
+            List<Currency> CurrencyInfo = new List<Currency>(3);
 
-                abb.Add(new Currency() { abb = "UAH" });
-                abb.Add(new Currency() { abb = "USD" });
-                abb.Add(new Currency() { abb = "EUR" });
+            CurrencyInfo.Add(new Currency() { Rcd = 1, abb = "UAH", Name = "Гривня" });
+            CurrencyInfo.Add(new Currency() { Rcd = 2, abb = "USD", Name = "Dollar" });
+            CurrencyInfo.Add(new Currency() { Rcd = 3, abb = "EUR", Name = "Euro" });
+
+            List<Сategory> СategoryInfo = new List<Сategory>(3);
+
+            СategoryInfo.Add(new Сategory() { Rcd = 1, Name = "Зарплата", Type = (FlowType)1 });
+            СategoryInfo.Add(new Сategory() { Rcd = 2, Name = "Бонусы", Type = (FlowType)1 });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Еда", Type = (FlowType)2 });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Бензин", Type = (FlowType)2 });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Лечение", Type = (FlowType)2 });
+            СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Игрушки", Type = (FlowType)2 });
+
+
 
             Transaction Artem = new Transaction();
 
