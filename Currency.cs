@@ -7,7 +7,7 @@ namespace ConsoleKisel1
     class Currency
     {
         public long Rcd; //ID-запси
-        string abb; //abbreviation -Аббревиатура валюты (трехсимвольный знак)
-        string Name; //Валюта
+        public string abb; //abbreviation -Аббревиатура валюты (трехсимвольный знак)
+        public string Name; //Валюта
     }
 }

@@ -12,3 +12,5 @@ namespace ConsoleKisel1
         public FlowType Type;
     }
 }
+
+
