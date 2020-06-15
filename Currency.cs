@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleKisel1
 {
-    class Currency
+    public class Currency
     {
         public long Rcd; //ID-запси
         public string abb; //abbreviation -Аббревиатура валюты (трехсимвольный знак)

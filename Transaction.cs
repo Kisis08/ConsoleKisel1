@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleKisel1
 {
-    class Transaction
+    public class Transaction
     {
         public long Rcd; //ID-запси
         public FlowType Type; //Тип записи (0-расход, 1 - приход)
