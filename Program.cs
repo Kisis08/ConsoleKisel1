@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.WebSockets;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Diagnostics;
+using System.Threading;
 
 namespace ConsoleKisel1
 {
@@ -38,7 +42,7 @@ namespace ConsoleKisel1
             Artem.Note = "Причемание";
             Artem.DateOperation = (DateTime.Now);
 
-            // Присвоение переменной ALALA значение, которое возвращает метод  CurrencyGet
+            // Присвоение переменной CurInfo значение, которое возвращает метод  CurrencyGet
             var CurInfo = CurrencyGet(CurrencyInfo, Artem);
             Console.WriteLine($"Валюта: {CurInfo.Rcd} {CurInfo.Name}");
 
@@ -47,7 +51,7 @@ namespace ConsoleKisel1
             Console.WriteLine($"Категория: {CatInfo.Rcd} {CatInfo.Name}");
 
             GetInfo(Artem);
-
+            MainMenu();
             //Artem.GetInfo();
             //Console.ReadKey();
 
@@ -80,12 +84,46 @@ namespace ConsoleKisel1
             }
 
 
-            static void GetInfo(Transaction Artem)
+             void GetInfo(Transaction Artem)
 
                 {
                     Console.WriteLine($"Транзакция за {Artem.DateOperation} \nТип: {Artem.Type}  \nСумма: {Artem.Value} \nВалюта: {Artem.Currency} \nКатегория: {Artem.Category}");
                 }
-            
+
+              static void CloseProgram()
+                 {
+                Environment.Exit(0);
+                 }
+
+            bool MainMenu()
+            {
+                Console.Clear();
+                Console.WriteLine("Выберите один из следующих вариантов:");
+                Console.WriteLine("1) Просмотреть доступные тразакции");
+                Console.WriteLine("2) Просмотреть доступные категории");
+                Console.WriteLine("3) Просмотреть доступные валюты");
+                Console.WriteLine("4) Выход");
+                Console.Write("\r\nСделайте выбор: ");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        GetInfo(Artem);
+                        return true;
+                    case "2":
+                        Console.WriteLine($"Категория: {CatInfo.Rcd} {CatInfo.Name}");
+                        return true;
+                    case "3":
+                        Console.WriteLine($"Валюта: {CurInfo.Rcd} {CurInfo.Name}");
+                        return true;
+                    case "4":
+                        CloseProgram();
+                        return false;
+                    default:
+                        return true;
+                }
+            }
+
         }  
     }                          
 }
