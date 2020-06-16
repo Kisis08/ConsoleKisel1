@@ -34,62 +34,25 @@ namespace ConsoleKisel1
             Artem.Type = FlowType.input;
             Artem.Value = 5220F;
             Artem.Currency = 978;
-            Artem.Category = 3;
+            Artem.Category = 2;
             Artem.Note = "Причемание";
             Artem.DateOperation = (DateTime.Now);
 
-            // Присвоение переменной ALALA значение, которое возвращает метод  VAL1
-            var ALALA = VAL1(CurrencyInfo, Artem);
-            Console.WriteLine($"Валюта: {ALALA.Rcd} {ALALA.Name}");
+            // Присвоение переменной ALALA значение, которое возвращает метод  CurrencyGet
+            var CurInfo = CurrencyGet(CurrencyInfo, Artem);
+            Console.WriteLine($"Валюта: {CurInfo.Rcd} {CurInfo.Name}");
 
-            // Присвоение переменной ALALA2 значение, которое возвращает метод  VAL2
-            var ALALA2 = VAL2(CurrencyInfo, Artem);
-            Console.WriteLine($"Валюта: {ALALA2.Rcd} {ALALA2.Name}");
+            // Присвоение переменной CatInfo значение, которое возвращает метод  СategoryGet
+            var CatInfo = СategoryGet(СategoryInfo, Artem);
+            Console.WriteLine($"Категория: {CatInfo.Rcd} {CatInfo.Name}");
 
-            //for (int Vаl = 0; Vаl < CurrencyInfo.Count; Vаl++)
-            //{
-            //    if (CurrencyInfo[Vаl].Rcd == Artem.Currency)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
-            //    {
-            //        Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
-            //        long CURRCD = CurrencyInfo[Vаl].Rcd;
-            //        string CURName = CurrencyInfo[Vаl].Name;
-            //       break;
-            //    }
-            //}
-            //Console.WriteLine($"Валюта: {CURRCD} {CURName}");
-
-
-            //for (int Vаl2 = 0; Vаl2 < СategoryInfo.Count; Vаl2++)
-            //{
-            //    if (СategoryInfo[Vаl2].Rcd == Artem.Category)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
-            //    {
-            //        Console.WriteLine($"Категория: {СategoryInfo[Vаl2].Rcd} {СategoryInfo[Vаl2].Name}");
-            //        break;
-            //    }
-            //}
-            //int i = 0;
-            //while (i < CurrencyInfo.Count)
-            //{
-            //    Console.WriteLine($"Валюта: {CurrencyInfo[i].Name}  {CurrencyInfo[i].abb}");
-            //    i++;
-            //}
-
-            //for (int а = 0; а < CurrencyInfo.Count; а++)
-            //{
-            //    Console.WriteLine($"Валюта: {CurrencyInfo[а].Name}  {CurrencyInfo[а].abb}");
-            //}
-
-
-            //foreach (Сategory aСategory in СategoryInfo)
-            //{
-            //    Console.WriteLine($"Категория: {aСategory.Name}");
-            //}
+            GetInfo(Artem);
 
             //Artem.GetInfo();
             //Console.ReadKey();
 
             //Передача структуры из метода (по памяти меньше, потому что просто ссылка)
-            static Currency VAL1(List<Currency> CurrencyInfo, Transaction Artem)
+            static Currency CurrencyGet (List<Currency> CurrencyInfo, Transaction Artem)
             {
                 for ( int Vаl = 0; Vаl < CurrencyInfo.Count; Vаl++)
               {
@@ -103,22 +66,26 @@ namespace ConsoleKisel1
                 return null; 
             }
 
-            //  Использование Tuple (кортежей) для вывода информации из метода
-            static (long Rcd, string Name) VAL2(List<Currency> CurrencyInfo, Transaction Artem)
+            static Сategory СategoryGet(List<Сategory> СategoryInfo, Transaction Artem)
             {
-                long Rcd = 0;
-                string Name = "";
-                for (int Vаl = 0; Vаl < CurrencyInfo.Count; Vаl++)
+                for (int Vаl = 0; Vаl < СategoryInfo.Count; Vаl++)
                 {
-                    if (CurrencyInfo[Vаl].Rcd == Artem.Currency)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
+                    if (СategoryInfo[Vаl].Rcd == Artem.Category)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
                     {
-                        Rcd = CurrencyInfo[Vаl].Rcd;
-                        Name = CurrencyInfo[Vаl].Name;
-                        return (Rcd, Name);
+                        //Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
+                        return СategoryInfo[Vаl];
                     }
                 }
-                return (Rcd, Name);
+                return null;
             }
+
+
+            static void GetInfo(Transaction Artem)
+
+                {
+                    Console.WriteLine($"Транзакция за {Artem.DateOperation} \nТип: {Artem.Type}  \nСумма: {Artem.Value} \nВалюта: {Artem.Currency} \nКатегория: {Artem.Category}");
+                }
+            
         }  
     }                          
 }

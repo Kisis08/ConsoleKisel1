@@ -14,10 +14,5 @@ namespace ConsoleKisel1
         public string Note; // Примечание   
         public DateTime DateCreate = (DateTime.Now); //Дата создания записи
         public DateTime DateOperation;  //Дата транзакции
-
-        public void GetInfo()
-        {
-            Console.WriteLine($"Транзакция за {DateOperation} \nТип: {Type}  \nСумма: {Value} \nВалюта: {Currency} \nКатегория: {Category}");
-        }
     }
 }
