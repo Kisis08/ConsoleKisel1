@@ -6,24 +6,29 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading;
 
+
 namespace ConsoleKisel1
 {
 
-
-    public class Program
+     
+    public static class Program
     {
-         public static void Main(string[] args)
+
+        private static List<Currency> CurrencyInfo;
+        private static List<Сategory> СategoryInfo;
+
+
+        public static void Main(string[] args)
         {
-
-            List<Currency> CurrencyInfo = new List<Currency>(3);
-
+             CurrencyInfo = new List<Currency>();
+       
             CurrencyInfo.Add(new Currency() { Rcd = 980, abb = "UAH", Name = "Гривня" });
             CurrencyInfo.Add(new Currency() { Rcd = 840, abb = "USD", Name = "Dollar" });
             CurrencyInfo.Add(new Currency() { Rcd = 978, abb = "EUR", Name = "Euro" });
             CurrencyInfo.Add(new Currency() { Rcd = 643, abb = "RUB", Name = "Рубль" });
 
-             List<Сategory> СategoryInfo = new List<Сategory>(3);
 
+            СategoryInfo = new List<Сategory>();
             СategoryInfo.Add(new Сategory() { Rcd = 1, Name = "Зарплата", Type = FlowType.input});
             СategoryInfo.Add(new Сategory() { Rcd = 2, Name = "Бонусы", Type = FlowType.input });
             СategoryInfo.Add(new Сategory() { Rcd = 3, Name = "Еда", Type = FlowType.output });
@@ -50,6 +55,8 @@ namespace ConsoleKisel1
             var CatInfo = СategoryGet(СategoryInfo, Artem);
             Console.WriteLine($"Категория: {CatInfo.Rcd} {CatInfo.Name}");
 
+
+
             GetInfo(Artem);
             MainMenu();
             //Artem.GetInfo();
@@ -69,6 +76,15 @@ namespace ConsoleKisel1
                 //Console.WriteLine($"Валюта: {Rcd} {Name}");
                 return null; 
             }
+            //метод вывода списка всех валют:
+            void CurrencyGetALL(List<Currency> CurrencyInfo, Transaction Artem)
+            {
+                for (int сurrencyGetALL = 0; сurrencyGetALL < CurrencyInfo.Count; сurrencyGetALL++)
+                {
+                    Console.WriteLine($"Валюта {CurrencyInfo[сurrencyGetALL].Rcd}: {CurrencyInfo[сurrencyGetALL].Name}");
+                }
+
+            }
 
             static Сategory СategoryGet(List<Сategory> СategoryInfo, Transaction Artem)
             {
@@ -82,9 +98,17 @@ namespace ConsoleKisel1
                 }
                 return null;
             }
+            //метод для вывода списка всех валют:
+            void СategoryGetALL(List<Сategory> СategoryInfo, Transaction Artem)
+            {
+                for (int Vаl2 = 0; Vаl2 < СategoryInfo.Count; Vаl2++)
+                {
+                    Console.WriteLine($"Категория №{СategoryInfo[Vаl2].Rcd}: {СategoryInfo[Vаl2].Name}");
+                }
+              
+            }
 
-
-             void GetInfo(Transaction Artem)
+            void GetInfo(Transaction Artem)
 
                 {
                     Console.WriteLine($"Транзакция за {Artem.DateOperation} \nТип: {Artem.Type}  \nСумма: {Artem.Value} \nВалюта: {Artem.Currency} \nКатегория: {Artem.Category}");
@@ -111,10 +135,10 @@ namespace ConsoleKisel1
                         GetInfo(Artem);
                         return true;
                     case "2":
-                        Console.WriteLine($"Категория: {CatInfo.Rcd} {CatInfo.Name}");
+                        СategoryGetALL(СategoryInfo, Artem); 
                         return true;
                     case "3":
-                        Console.WriteLine($"Валюта: {CurInfo.Rcd} {CurInfo.Name}");
+                        CurrencyGetALL(CurrencyInfo, Artem);
                         return true;
                     case "4":
                         CloseProgram();
