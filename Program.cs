@@ -9,13 +9,73 @@ using System.Threading;
 
 namespace ConsoleKisel1
 {
-
-     
     public static class Program
     {
 
         private static List<Currency> CurrencyInfo;
         private static List<Сategory> СategoryInfo;
+
+        //метод вывода списка всех валют:
+        static void CurrencyGetALL(List<Currency> CurrencyInfo, Transaction Artem)
+        {
+            for (int сurrencyGetALL = 0; сurrencyGetALL < CurrencyInfo.Count; сurrencyGetALL++)
+            {
+                Console.WriteLine($"Валюта {CurrencyInfo[сurrencyGetALL].Rcd}: {CurrencyInfo[сurrencyGetALL].Name}");
+            }
+
+        }
+
+        static Сategory СategoryGet(List<Сategory> СategoryInfo, Transaction Artem)
+        {
+            for (int Vаl = 0; Vаl < СategoryInfo.Count; Vаl++)
+            {
+                if (СategoryInfo[Vаl].Rcd == Artem.Category)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
+                {
+                    //Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
+                    return СategoryInfo[Vаl];
+                }
+            }
+            return null;
+        }
+
+
+        //Передача структуры из метода (по памяти меньше, потому что просто ссылка)
+        static Currency CurrencyGet(List<Currency> CurrencyInfo, Transaction Artem)
+        {
+            for (int Vаl = 0; Vаl < CurrencyInfo.Count; Vаl++)
+            {
+                if (CurrencyInfo[Vаl].Rcd == Artem.Currency)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
+                {
+                    //Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
+                    return CurrencyInfo[Vаl];
+                }
+            }
+            //Console.WriteLine($"Валюта: {Rcd} {Name}");
+            return null;
+        }
+
+        //метод для вывода списка всех валют:
+        public static void СategoryGetALL(List<Сategory> СategoryInfo, Transaction Artem)
+        {
+            for (int Vаl2 = 0; Vаl2 < СategoryInfo.Count; Vаl2++)
+            {
+                Console.WriteLine($"Категория №{СategoryInfo[Vаl2].Rcd}: {СategoryInfo[Vаl2].Name}");
+            }
+
+        }
+
+        public static void GetInfo(Transaction Artem)
+
+        {
+            Console.WriteLine($"Транзакция за {Artem.DateOperation} \nТип: {Artem.Type}  \nСумма: {Artem.Value} \nВалюта: {Artem.Currency} \nКатегория: {Artem.Category}");
+        }
+
+        public static void CloseProgram()
+        {
+            Environment.Exit(0);
+        }
+
+
 
 
         public static void Main(string[] args)
@@ -57,67 +117,10 @@ namespace ConsoleKisel1
 
 
 
-            GetInfo(Artem);
+            Program.GetInfo(Artem);
             MainMenu();
             //Artem.GetInfo();
             //Console.ReadKey();
-
-            //Передача структуры из метода (по памяти меньше, потому что просто ссылка)
-            static Currency CurrencyGet (List<Currency> CurrencyInfo, Transaction Artem)
-            {
-                for ( int Vаl = 0; Vаl < CurrencyInfo.Count; Vаl++)
-              {
-                    if (CurrencyInfo[Vаl].Rcd == Artem.Currency)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
-                    {
-                        //Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
-                        return CurrencyInfo[Vаl];
-                    }
-                }
-                //Console.WriteLine($"Валюта: {Rcd} {Name}");
-                return null; 
-            }
-            //метод вывода списка всех валют:
-            void CurrencyGetALL(List<Currency> CurrencyInfo, Transaction Artem)
-            {
-                for (int сurrencyGetALL = 0; сurrencyGetALL < CurrencyInfo.Count; сurrencyGetALL++)
-                {
-                    Console.WriteLine($"Валюта {CurrencyInfo[сurrencyGetALL].Rcd}: {CurrencyInfo[сurrencyGetALL].Name}");
-                }
-
-            }
-
-            static Сategory СategoryGet(List<Сategory> СategoryInfo, Transaction Artem)
-            {
-                for (int Vаl = 0; Vаl < СategoryInfo.Count; Vаl++)
-                {
-                    if (СategoryInfo[Vаl].Rcd == Artem.Category)// Vаl - инструмент цикла. Необходимо сравнивать не с ним, а  с искомым значение из списка по которому бежит цикл в нашем случае это РЦД влаюты из списка CurrencyInfo
-                    {
-                        //Console.WriteLine($"Валюта: {CurrencyInfo[Vаl].Rcd} {CurrencyInfo[Vаl].Name}");
-                        return СategoryInfo[Vаl];
-                    }
-                }
-                return null;
-            }
-            //метод для вывода списка всех валют:
-            void СategoryGetALL(List<Сategory> СategoryInfo, Transaction Artem)
-            {
-                for (int Vаl2 = 0; Vаl2 < СategoryInfo.Count; Vаl2++)
-                {
-                    Console.WriteLine($"Категория №{СategoryInfo[Vаl2].Rcd}: {СategoryInfo[Vаl2].Name}");
-                }
-              
-            }
-
-            void GetInfo(Transaction Artem)
-
-                {
-                    Console.WriteLine($"Транзакция за {Artem.DateOperation} \nТип: {Artem.Type}  \nСумма: {Artem.Value} \nВалюта: {Artem.Currency} \nКатегория: {Artem.Category}");
-                }
-
-              static void CloseProgram()
-                 {
-                Environment.Exit(0);
-                 }
 
             bool MainMenu()
             {
@@ -132,13 +135,13 @@ namespace ConsoleKisel1
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        GetInfo(Artem);
+                        Program.GetInfo(Artem);
                         return true;
                     case "2":
-                        СategoryGetALL(СategoryInfo, Artem); 
+                        Program.СategoryGetALL(СategoryInfo, Artem);
                         return true;
                     case "3":
-                        CurrencyGetALL(CurrencyInfo, Artem);
+                        Program.CurrencyGetALL(CurrencyInfo, Artem);
                         return true;
                     case "4":
                         CloseProgram();
